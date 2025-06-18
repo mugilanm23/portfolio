@@ -14,12 +14,12 @@ const Experience = () => {
       id: 1,
       company: "Acutix Soft LLP",
       role: "Full Stack Developer Intern",
-      duration: "Jun 2024 - Aug 2024",
+      duration: "May 2025 - June 2025",
       location: "Remote",
       type: "Internship",
       description:
         "Worked on full-stack web development projects using modern technologies. Developed responsive web applications and collaborated with the team on various client projects.",
-      skills: ["React", "Node.js", "Express", "MongoDB", "Canva", "GitHub", "Vercel", "Render"],
+      skills: ["React", "Node.js", "Express", "Canva", "GitHub", "Vercel", "Render"],
       achievements: [
         "Built and deployed 3+ client websites",
         "Improved application performance by 40%",
@@ -32,7 +32,7 @@ const Experience = () => {
       id: 2,
       company: "Rizzspace",
       role: "Frontend Developer Intern",
-      duration: "Mar 2024 - May 2024",
+      duration: "Nov 2024 - Dec 2024",
       location: "Remote",
       type: "Internship",
       description:
@@ -49,12 +49,12 @@ const Experience = () => {
       id: 3,
       company: "CodeSoft",
       role: "Python Developer Intern",
-      duration: "Jan 2024 - Feb 2024",
+      duration: "May 2024 - June 2024",
       location: "Remote",
       type: "Online Internship",
       description:
         "Developed Python applications and worked on data analysis projects. Gained experience in backend development and automation scripts.",
-      skills: ["Python", "Data Analysis", "Automation", "APIs"],
+      skills: ["Python", "Data Analysis"],
       achievements: [
         "Completed 10+ Python projects",
         "Automated repetitive tasks saving 20+ hours/week",
@@ -88,7 +88,7 @@ const Experience = () => {
       type: "Online Internship",
       description:
         "Comprehensive web development training covering both frontend and backend technologies. Worked on real-world projects and gained hands-on experience.",
-      skills: ["HTML", "CSS", "JavaScript", "React", "Node.js", "Database"],
+      skills: ["HTML", "CSS", "JavaScript",],
       achievements: [
         "Completed 15+ web development tasks",
         "Built full-stack web application",
@@ -237,7 +237,7 @@ const Experience = () => {
         </div>
 
         {/* Summary Stats */}
-        <motion.div
+{/*         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
@@ -260,7 +260,7 @@ const Experience = () => {
               <div className="text-gray-400 text-sm">{stat.label}</div>
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   )

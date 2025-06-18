@@ -4,6 +4,7 @@ import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { useInView } from "react-intersection-observer"
 import { Download, Eye, FileText, X, ExternalLink } from "lucide-react"
+import resumePDF from "../assets/Mugilanresumesem4 (1).pdf"
 
 const Resume = () => {
   const [ref, inView] = useInView({
@@ -48,9 +49,8 @@ const Resume = () => {
   ]
 
   const handleDownload = () => {
-    // In a real application, this would trigger the actual download
     const link = document.createElement("a")
-    link.href = "/resume.pdf"
+    link.href = resumePDF
     link.download = "Mugilan_M_Resume.pdf"
     document.body.appendChild(link)
     link.click()
@@ -227,7 +227,7 @@ const Resume = () => {
                   </div>
                   <div className="flex items-center space-x-3">
                     <motion.a
-                      href="/resume.pdf"
+                      href={resumePDF}
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.05 }}
@@ -246,23 +246,13 @@ const Resume = () => {
                   </div>
                 </div>
 
-                {/* Modal Content */}
-                <div className="p-6 h-[70vh] overflow-y-auto">
-                  <div className="bg-white rounded-lg p-8 text-gray-900">
-                    {/* This would typically be an embedded PDF viewer or iframe */}
-                    <div className="text-center py-20">
-                      <FileText className="mx-auto mb-4 text-gray-400" size={64} />
-                      <h4 className="text-2xl font-bold mb-2">Resume Preview</h4>
-                      <p className="text-gray-600 mb-6">PDF preview would be displayed here in a real application</p>
-                      <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        onClick={handleDownload}
-                        className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-3 rounded-lg font-medium transition-colors"
-                      >
-                        Download Full Resume
-                      </motion.button>
-                    </div>
-                  </div>
+                {/* Modal Content with iframe */}
+                <div className="h-[70vh] overflow-y-auto bg-white rounded-lg">
+                  <iframe
+                    src={resumePDF}
+                    className="w-full h-full rounded-lg"
+                    title="Resume PDF"
+                  ></iframe>
                 </div>
               </motion.div>
             </motion.div>

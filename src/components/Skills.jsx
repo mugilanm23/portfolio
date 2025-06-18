@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import { useInView } from "react-intersection-observer"
-import { Code, Database, Palette, Globe, Server, Smartphone } from "lucide-react"
+import { Code, Database, Palette, Server, Globe, UploadCloud } from "lucide-react"
 
 const Skills = () => {
   const [ref, inView] = useInView({
@@ -15,11 +15,9 @@ const Skills = () => {
       icon: Globe,
       color: "from-blue-400 to-cyan-400",
       skills: [
+        { name: "React", level: 90 },
+        { name: "JavaScript", level: 88 },
         { name: "HTML/CSS", level: 95 },
-        { name: "JavaScript", level: 90 },
-        { name: "React", level: 88 },
-        { name: "Bootstrap", level: 85 },
-        { name: "Tailwind CSS", level: 82 },
       ],
     },
     {
@@ -27,11 +25,9 @@ const Skills = () => {
       icon: Server,
       color: "from-purple-400 to-pink-400",
       skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "Python", level: 88 },
-        { name: "Django", level: 75 },
-        { name: "C++", level: 82 },
+        { name: "Django", level: 80 },
+        { name: "Python", level: 95 },
+        { name: "Express.js", level: 78 },
       ],
     },
     {
@@ -39,10 +35,8 @@ const Skills = () => {
       icon: Database,
       color: "from-green-400 to-emerald-400",
       skills: [
-        { name: "MongoDB", level: 85 },
-        { name: "MySQL", level: 88 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "Firebase", level: 70 },
+        { name: "MongoDB", level: 70 },
+        { name: "MySQL", level: 90 },
       ],
     },
     {
@@ -52,8 +46,6 @@ const Skills = () => {
       skills: [
         { name: "Figma", level: 85 },
         { name: "Canva", level: 90 },
-        { name: "Adobe XD", level: 70 },
-        { name: "UI/UX Design", level: 80 },
       ],
     },
     {
@@ -61,29 +53,24 @@ const Skills = () => {
       icon: Code,
       color: "from-indigo-400 to-purple-400",
       skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Vercel", level: 85 },
-        { name: "Render", level: 80 },
-        { name: "Hostinger", level: 75 },
+        { name: "GitHub", level: 90 },
         { name: "VS Code", level: 95 },
       ],
     },
     {
-      title: "Mobile & Others",
-      icon: Smartphone,
+      title: "Deployment",
+      icon: UploadCloud,
       color: "from-teal-400 to-blue-400",
       skills: [
-        { name: "React Native", level: 70 },
-        { name: "Streamlit", level: 80 },
-        { name: "REST APIs", level: 85 },
-        { name: "GraphQL", level: 65 },
+        { name: "Render and vercel ", level: 90 },
+        { name: "Squarespace and Hostinger", level: 70 },
       ],
     },
   ]
 
   return (
     <section id="skills" className="section-padding">
-      <div className="container-custom">
+      <div className="container-custom p-8">
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 50 }}
@@ -107,7 +94,6 @@ const Skills = () => {
               transition={{ duration: 0.8, delay: categoryIndex * 0.1 }}
               className="glass-effect rounded-xl p-6 card-hover"
             >
-              {/* Category Header */}
               <div className="flex items-center mb-6">
                 <div className={`p-3 rounded-lg bg-gradient-to-r ${category.color} mr-4`}>
                   <category.icon className="text-white" size={24} />
@@ -115,7 +101,6 @@ const Skills = () => {
                 <h3 className="text-xl font-semibold text-white">{category.title}</h3>
               </div>
 
-              {/* Skills List */}
               <div className="space-y-4">
                 {category.skills.map((skill, skillIndex) => (
                   <div key={skillIndex} className="space-y-2">
@@ -153,7 +138,6 @@ const Skills = () => {
           ))}
         </div>
 
-        {/* Additional Skills Tags */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -163,18 +147,15 @@ const Skills = () => {
           <h3 className="text-2xl font-semibold mb-8 gradient-text">Additional Technologies</h3>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "TypeScript",
-              "Next.js",
-              "Vue.js",
-              "Docker",
-              "AWS",
-              "Linux",
-              "Nginx",
-              "Redis",
+              "Streamlit",
+              "Excel",
               "Socket.io",
-              "Jest",
-              "Webpack",
-              "Sass",
+              "Pandas",
+              "NumPy",
+              "Matplotlib",
+              "Bootstrap",
+              "Tailwind",
+              "Node.js",
             ].map((tech, index) => (
               <motion.span
                 key={index}

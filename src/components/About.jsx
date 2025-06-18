@@ -20,12 +20,13 @@ const About = () => {
     { name: "GitHub", icon: "🐙", color: "text-gray-400" },
   ]
 
-  const stats = [
-    { icon: GraduationCap, label: "CGPA", value: "9.12/10", color: "text-green-400" },
-    { icon: Code, label: "LeetCode", value: "340+", color: "text-orange-400" },
-    { icon: Award, label: "Projects", value: "15+", color: "text-purple-400" },
-    { icon: Calendar, label: "Experience", value: "2+ Years", color: "text-blue-400" },
-  ]
+const stats = [
+  { icon: GraduationCap, label: "CGPA", value: "9.12/10", color: "text-green-400" },
+  { icon: Code, label: "LeetCode", value: "340+", color: "text-orange-400" },
+  { icon: Award, label: "Internships", value: "2 Internships", color: "text-purple-400" },
+  { icon: Calendar, label: "Volunteering", value: "4+ Events", color: "text-blue-400" },
+]
+
 
   return (
     <section id="about" className="section-padding bg-black/20">

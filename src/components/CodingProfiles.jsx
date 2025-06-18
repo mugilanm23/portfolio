@@ -13,16 +13,16 @@ const CodingProfiles = () => {
     {
       id: 1,
       name: "GitHub",
-      username: "@mugilanm",
+      username: "@mugilanm23",
       description: "Open source contributions and personal projects",
       icon: Github,
       color: "from-gray-600 to-gray-800",
       stats: {
-        repositories: "25+",
-        followers: "50+",
-        contributions: "500+",
+        repositories: "30+",
+        followers: "60+",
+        contributions: "600+",
       },
-      link: "https://github.com/mugilanm",
+      link: "https://github.com/mugilanm23",
       verified: true,
     },
     {
@@ -33,91 +33,91 @@ const CodingProfiles = () => {
       icon: Linkedin,
       color: "from-blue-600 to-blue-800",
       stats: {
-        connections: "300+",
-        posts: "50+",
-        endorsements: "25+",
+        connections: "350+",
+        posts: "60+",
+        endorsements: "30+",
       },
-      link: "https://linkedin.com/in/mugilan-m",
+      link: "https://www.linkedin.com/in/mugilan-mugi-2a3323369/",
       verified: true,
     },
     {
       id: 3,
       name: "LeetCode",
-      username: "@mugilanm23",
+      username: "@mugilanm",
       description: "Algorithmic problem solving and coding practice",
       icon: Code,
       color: "from-orange-500 to-red-600",
       stats: {
-        problems: "340+",
-        ranking: "Top 15%",
-        streak: "45 days",
+        problems: "350+",
+        ranking: "Top 10%",
+        streak: "50 days",
       },
-      link: "https://leetcode.com/mugilanm23",
+      link: "https://leetcode.com/u/mugilanm/",
       verified: true,
       featured: true,
     },
     {
       id: 4,
       name: "GeeksforGeeks",
-      username: "@mugilanm2005",
+      username: "@mugilanm",
       description: "Competitive programming and technical articles",
       icon: Database,
       color: "from-green-500 to-green-700",
       stats: {
-        problems: "200+",
-        articles: "10+",
-        score: "1500+",
+        problems: "220+",
+        articles: "12+",
+        score: "1700+",
       },
-      link: "https://auth.geeksforgeeks.org/user/mugilanm2005",
+      link: "https://www.geeksforgeeks.org/user/mugilanm2mm9s/",
       verified: true,
     },
     {
       id: 5,
       name: "CodeChef",
-      username: "@mugilan_m",
+      username: "@mugilanm2311",
       description: "Competitive programming contests and challenges",
       icon: Trophy,
       color: "from-yellow-500 to-orange-600",
       stats: {
-        rating: "1400+",
-        contests: "20+",
+        rating: "1460+",
+        contests: "25+",
         rank: "3 Star",
       },
-      link: "https://codechef.com/users/mugilan_m",
+      link: "https://www.codechef.com/users/mugilanm2311",
       verified: false,
     },
     {
       id: 6,
       name: "HackerRank",
-      username: "@mugilanm23",
+      username: "@mugilanm23112005",
       description: "Skill assessments and coding challenges",
       icon: Star,
       color: "from-green-400 to-blue-500",
       stats: {
-        badges: "15+",
-        certificates: "8+",
+        badges: "18+",
+        certificates: "10+",
         rank: "Gold",
       },
-      link: "https://hackerrank.com/mugilanm23",
+      link: "https://www.hackerrank.com/profile/mugilanm23112005 ",
       verified: true,
     },
   ]
 
   const achievements = [
     {
-      title: "340+ Problems Solved",
+      title: "350+ Problems Solved",
       description: "LeetCode",
       icon: Code,
       color: "text-orange-400",
     },
     {
-      title: "Top 15% Ranking",
+      title: "Top 10% Ranking",
       description: "Global LeetCode Ranking",
       icon: Trophy,
       color: "text-yellow-400",
     },
     {
-      title: "500+ Contributions",
+      title: "600+ Contributions",
       description: "GitHub Open Source",
       icon: Github,
       color: "text-gray-400",
@@ -147,7 +147,7 @@ const CodingProfiles = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-primary-400 to-secondary-400 mx-auto rounded-full mt-6" />
         </motion.div>
 
-        {/* Coding Achievements */}
+        {/* Achievements */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -170,7 +170,7 @@ const CodingProfiles = () => {
           ))}
         </motion.div>
 
-        {/* Profiles Grid */}
+        {/* Profile Cards */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {profiles.map((profile, index) => (
             <motion.div
@@ -191,7 +191,6 @@ const CodingProfiles = () => {
                 </div>
               )}
 
-              {/* Header */}
               <div className={`p-6 bg-gradient-to-r ${profile.color} relative overflow-hidden`}>
                 <div className="absolute inset-0 bg-black/20" />
                 <div className="relative z-10 flex items-center space-x-4">
@@ -218,11 +217,8 @@ const CodingProfiles = () => {
                 </div>
               </div>
 
-              {/* Content */}
               <div className="p-6">
                 <p className="text-gray-300 mb-6">{profile.description}</p>
-
-                {/* Stats */}
                 <div className="grid grid-cols-3 gap-4 mb-6">
                   {Object.entries(profile.stats).map(([key, value]) => (
                     <div key={key} className="text-center">
@@ -231,8 +227,6 @@ const CodingProfiles = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* Action Button */}
                 <motion.a
                   href={profile.link}
                   target="_blank"
@@ -249,7 +243,6 @@ const CodingProfiles = () => {
           ))}
         </div>
 
-        {/* Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

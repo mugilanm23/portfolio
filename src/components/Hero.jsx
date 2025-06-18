@@ -1,7 +1,7 @@
 "use client"
 import { motion } from "framer-motion"
 import { TypeAnimation } from "react-type-animation"
-import { Download, ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { Download, ArrowRight, Github, Linkedin, Mail, ChevronDown } from "lucide-react"
 import { Link } from "react-scroll"
 import image from "../assets/mugilan.jpg"
 
@@ -42,54 +42,34 @@ const Hero = () => {
           }}
           transition={{
             duration: 15,
-            repeat: Number.POSITIVE_INFINITY,
+            repeat: Infinity,
             ease: "linear",
           }}
           className="absolute bottom-1/4 right-1/4 w-48 h-48 bg-gradient-to-r from-accent-500/20 to-primary-500/20 rounded-full blur-3xl"
         />
       </div>
 
-      <div className="container-custom relative z-10">
+      <div className="container-custom relative z-10 mt-7">
         <motion.div variants={containerVariants} initial="hidden" animate="visible" className="text-center">
-          {/* Profile Image */}
+
+          {/* Profile Image with Pulse Dot */}
           <motion.div variants={itemVariants} className="relative mx-auto w-48 h-48 mb-8">
-<div className="relative mx-auto w-48 h-48 mb-8">
-  {/* Rotating Border */}
-  <motion.div
-    animate={{ rotate: 360 }}
-    transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-    className="absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 rounded-full p-1"
-  />
-
-  {/* Static Image (no rotation) */}
-  <div className="absolute inset-0 p-2 bg-gray-900 rounded-full z-10">
-    <img
-      src={image}
-      alt="Mugilan M"
-      className="w-full h-full rounded-full object-cover"
-    />
-  </div>
-
-  {/* Online Dot */}
-  <motion.div
-    animate={{ y: [-10, 10, -10] }}
-    transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-    className="absolute -top-4 -right-4 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center z-20"
-  >
-    <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
-  </motion.div>
-</div>
-
             <motion.div
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" }}
-              className="absolute -top-4 -right-4 w-8 h-8 bg-green-400 rounded-full flex items-center justify-center"
-            >
-              <div className="w-3 h-3 bg-white rounded-full animate-pulse" />
-            </motion.div>
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 bg-gradient-to-r from-primary-400 via-secondary-400 to-accent-400 rounded-full p-1"
+            />
+
+            <div className="absolute inset-0 p-2 bg-gray-900 rounded-full z-10">
+              <img
+                src={image}
+                alt="Mugilan M"
+                className="w-full h-full rounded-full object-cover"
+              />
+            </div>
           </motion.div>
 
-          {/* Name and Title */}
+          {/* Name and Typewriter Title */}
           <motion.h1 variants={itemVariants} className="text-5xl md:text-7xl font-bold mb-6">
             <span className="gradient-text">Mugilan M</span>
           </motion.h1>
@@ -101,25 +81,24 @@ const Hero = () => {
                 2000,
                 "Passionate Student",
                 2000,
-                "Web developer ",
+                "Web Developer",
                 2000,
                 "UI/UX Designer",
                 2000,
               ]}
               wrapper="span"
               speed={50}
-              repeat={Number.POSITIVE_INFINITY}
+              repeat={Infinity}
               className="gradient-text font-semibold"
             />
           </motion.div>
 
-<motion.p variants={itemVariants} className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
-  Currently pursuing my third year in Computer Science and Engineering at Chennai Institute of Technology with a CGPA of 9.12. <br />
-  I’m driven by a strong interest in building meaningful software solutions and transforming ideas into working products.
-</motion.p>
+          <motion.p variants={itemVariants} className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
+            Currently pursuing my third year in Computer Science and Engineering at Chennai Institute of Technology with a CGPA of 9.12. <br />
+            I’m driven by a strong interest in building meaningful software solutions and transforming ideas into working products.
+          </motion.p>
 
-
-          {/* CTA Buttons */}
+          {/* Buttons */}
           <motion.div
             variants={itemVariants}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
@@ -131,7 +110,7 @@ const Hero = () => {
             >
               <Download size={20} />
               <span>Download Resume</span>
-              <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}>
+              <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                 <ArrowRight size={20} />
               </motion.div>
             </motion.button>
@@ -143,7 +122,7 @@ const Hero = () => {
                 className="group border-2 border-primary-400 text-primary-400 hover:bg-primary-400 hover:text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2"
               >
                 <span>Explore Projects</span>
-                <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Number.POSITIVE_INFINITY }}>
+                <motion.div animate={{ x: [0, 5, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
                   <ArrowRight size={20} />
                 </motion.div>
               </motion.button>
@@ -151,48 +130,40 @@ const Hero = () => {
           </motion.div>
 
           {/* Social Links */}
-<motion.div variants={itemVariants} className="flex justify-center space-x-6">
-  {[
-    { icon: Github, href: "https://github.com/mugilanm23", target: "_blank", color: "hover:hover:text-black" },
-    { icon: Linkedin, href: "https://www.linkedin.com/in/mugilan-mugi-2a3323369/", target: "_blank", color: "hover:text-blue-400" }, // changed here
-    { icon: Mail, href: "mailto:mugilanm23112005@gmail.com", target: "_self", color: "hover:text-red-400" },
-  ].map((social, index) => (
-    <motion.a
-      key={index}
-      href={social.href}
-      target={social.target}
-      rel={social.target === "_blank" ? "noopener noreferrer" : undefined}
-      whileHover={{ scale: 1.2, y: -5 }}
-      whileTap={{ scale: 0.9 }}
-      className={`text-gray-400 ${social.color} transition-colors duration-300`}
-    >
-      <social.icon size={24} />
-    </motion.a>
-  ))}
-</motion.div>
+          <motion.div variants={itemVariants} className="flex justify-center space-x-6">
+            {[
+              { icon: Github, href: "https://github.com/mugilanm23", target: "_blank", color: "hover:text-black" },
+              { icon: Linkedin, href: "https://www.linkedin.com/in/mugilan-mugi-2a3323369/", target: "_blank", color: "hover:text-blue-400" },
+              { icon: Mail, href: "mailto:mugilanm23112005@gmail.com", target: "_self", color: "hover:text-red-400" },
+            ].map((social, index) => (
+              <motion.a
+                key={index}
+                href={social.href}
+                target={social.target}
+                rel={social.target === "_blank" ? "noopener noreferrer" : undefined}
+                whileHover={{ scale: 1.2, y: -5 }}
+                whileTap={{ scale: 0.9 }}
+                className={`text-gray-400 ${social.color} transition-colors duration-300`}
+              >
+                <social.icon size={24} />
+              </motion.a>
+            ))}
+          </motion.div>
 
-
-
-          {/* Scroll Indicator */}
+          {/* Modern Scroll Indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 2 }}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+            className="mt-16 flex justify-center"
           >
             <Link to="about" smooth={true} duration={500} offset={-70}>
               <motion.div
                 animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                className="cursor-pointer text-gray-400 hover:text-white transition-colors"
+                transition={{ duration: 1.5, repeat: Infinity }}
+                className="cursor-pointer text-gray-400 hover:text-white"
               >
-                <div className="w-6 h-10 border-2 border-current rounded-full flex justify-center">
-                  <motion.div
-                    animate={{ y: [0, 12, 0] }}
-                    transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-                    className="w-1 h-3 bg-current rounded-full mt-2"
-                  />
-                </div>
+                <ChevronDown size={32} />
               </motion.div>
             </Link>
           </motion.div>
